@@ -53,6 +53,10 @@
     <Reference Include="Google.Apis.YouTube.v3">
       <HintPath>..\packages\Google.Apis.YouTube.v3.1.17.0.582\lib\net45\Google.Apis.YouTube.v3.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -75,9 +79,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Lib\jCollect.cs" />
+    <Compile Include="Lib\jDownLoad.cs" />
     <Compile Include="Lib\jFile.cs" />
     <Compile Include="Lib\jHotKey.cs" />
     <Compile Include="Lib\jOs.cs" />
+    <Compile Include="Lib\jTemplate.cs" />
     <Compile Include="Lib\jThread.cs" />
     <Compile Include="Lib\jUpload.cs" />
     <Compile Include="Lib\Youtube\Playlists.cs" />

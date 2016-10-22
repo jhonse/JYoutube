@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JYoutube.Lib
 {
@@ -19,6 +16,24 @@ namespace JYoutube.Lib
                     return true;
                 }
                 else
+                {
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool is_File(string path)
+        {
+            try
+            {
+                if (File.Exists(path))
+                {
+                    return true;
+                }else
                 {
                     return false;
                 }
@@ -52,6 +67,24 @@ namespace JYoutube.Lib
             {
 
             }
+        }
+
+        public static List<string> getFiles(string path)
+        {
+            List<string> files = new List<string>();
+            try
+            {
+                DirectoryInfo folder = new DirectoryInfo(path);
+                foreach (FileInfo file in folder.GetFiles("*.xml"))
+                {
+                    files.Add(file.FullName);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            return files;
         }
     }
 }
