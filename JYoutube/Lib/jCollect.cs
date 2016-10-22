@@ -3,6 +3,8 @@ using System.Text;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using System.Net;
+using Newtonsoft.Json;
+using System.Xml;
 
 namespace JYoutube.Lib
 {
@@ -44,6 +46,7 @@ namespace JYoutube.Lib
                     string TmpCollectLinkVideo = lvi.SubItems[4].Text;
                     string TmpCollectMode = lvi.SubItems[5].Text;
                     string pageListData = jDownLoad.downPage(TmpCollectLink, Encoding.UTF8, true);
+                    pageListData = ((XmlDocument)JsonConvert.DeserializeXmlNode(pageListData)).InnerText;
                     if (!pageListData.Equals(""))
                     {
                         HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
